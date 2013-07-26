@@ -7,9 +7,9 @@ var server = http.createServer(app);
 server.listen(process.env.PORT);
 // routing
 
-app.get("/", function(req, res) {
+/*app.get("/", function(req, res) {
   res.redirect("index.html");
-});
+});*/
 app.configure(function(){
   app.use(express.methodOverride());
   app.use(express.bodyParser());
