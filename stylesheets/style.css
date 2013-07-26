@@ -1,0 +1,49 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+#complimentText {
+  background: #fff;
+  border: 1px solid  rgba(0, 0, 0, .2);
+  padding: 12px;
+  position: relative;
+  font-size: 30px;
+  
+  width: 600px;
+  font-family: "HelveticaNeue-Light", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+}
+    
+#complimentText:focus {
+  outline: none;
+  border-color: #09f; 
+  color: #222;
+}
+
+body {
+    background-color: #0e83cd;
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    color: white;
+}
+.title {
+  font-size:50px;
+}
+.container {
+    padding-top: 120px;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+    .compliment {
+      font-size: 60px;
+  }
+
+form {
+  display: none;
+}
+#addyourown {
+  margin-top: 60px;
+  text-align:center;
+}
