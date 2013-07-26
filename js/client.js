@@ -28,13 +28,13 @@ $('#f').click(function() {
 	var url = 'http://www.facebook.com/sharer.php?u=http%3A%2F%2Fwarmfuzzi.es';
 	window.open (url, "mywindow","menubar=1,resizable=1,width=570,height=430");
 });
-$('#l').click(function(e) {
+/*$('#l').click(function(e) {
 	var rndm = Math.random().toString(36).substring(5);
 	var frbs_rndm = frbs.child('saved');
 	frbs_rndm.child(rndm).set({text:$(".compliment").html()});
 	$(".compliment").html("http://warmfuzzi.es/"+rndm);
 	return false;
-});
+});*/
 function loadNewCompliment() {
 	frbs_new.once('value', function(childSnapshot, prevChildName) {
 		console.log(childSnapshot.val());
@@ -50,10 +50,10 @@ function loadNewCompliment() {
 	});
 }
 function loadOldCompliment() {
-	frbs_saved = frbs_old.child(window.location.pathname.substring(1));
+	/*frbs_saved = frbs_old.child(window.location.pathname.substring(1));
 	frbs_saved.once('value', function (childSnapshot, prevChildName) {
 		$(".compliment").html(childSnapshot.val().text);
-	});
+	});*/
 }
 function loadData() {
 	frbs_data.on('value', function(snap) {
@@ -80,6 +80,7 @@ $("#sad").click(function() {
 if(window.location.pathname != "/") {
 	console.log(window.location.pathname);
 	loadOldCompliment();
+	loadNewCompliment();
 }
 else {
 	loadNewCompliment();
