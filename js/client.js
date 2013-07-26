@@ -62,8 +62,7 @@ function loadData() {
 	});
 }
 $("#happy").click(function() {
-	$("#happy").css("display","none");
-	$("#sad").css("display","none");
+	$("#images").css("display","none");
 	frbs_data.transaction(function(count) {
 		if(!voted) {
 			voted = true;
@@ -74,8 +73,8 @@ $("#happy").click(function() {
 });
 $("#sad").click(function() {
 	voted = true;
-	$("#happy").css("display","none");
-	$("#sad").css("display","none");
+	$("#images").css("display","none");
+
 });
 if(window.location.pathname != "/") {
 	console.log(window.location.pathname);
