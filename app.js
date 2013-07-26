@@ -8,7 +8,7 @@ server.listen(process.env.PORT);
 // routing
 
 app.get("/", function(req, res) {
-  res.redirect("purple.html");
+  res.redirect("index.html");
 });
 app.configure(function(){
   app.use(express.methodOverride());
