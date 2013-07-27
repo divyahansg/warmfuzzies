@@ -2,8 +2,8 @@ var frbs = new Firebase('https://warmfuzzies.firebaseIO.com');
 var voted = false;
 var frbs_new = frbs.child('new');
 var frbs_old = frbs.child('saved');
-var frbs_data = frbs.child('data').child('count'); 
-
+var frbs_data = frbs.child('data').child('count');
+var linked =false;
 $('form').submit(function (e) {
 	if($("input#complimentText").val().length == 0) return false;
 	var frbs_new = frbs.child('new');
@@ -28,13 +28,16 @@ $('#f').click(function() {
 	var url = 'http://www.facebook.com/sharer.php?u=http%3A%2F%2Fwarmfuzzi.es';
 	window.open (url, "mywindow","menubar=1,resizable=1,width=570,height=430");
 });
-/*$('#l').click(function(e) {
-	var rndm = Math.random().toString(36).substring(5);
+$('#l').click(function(e) {
+	if(!linked) {
+	linked=true;
+	var rndm = Math.random().toString(36).substring(11);
 	var frbs_rndm = frbs.child('saved');
 	frbs_rndm.child(rndm).set({text:$(".compliment").html()});
 	$(".compliment").html("http://warmfuzzi.es/"+rndm);
+	}
 	return false;
-});*/
+});
 function loadNewCompliment() {
 	frbs_new.once('value', function(childSnapshot, prevChildName) {
 		console.log(childSnapshot.val());
@@ -50,10 +53,11 @@ function loadNewCompliment() {
 	});
 }
 function loadOldCompliment() {
-	/*frbs_saved = frbs_old.child(window.location.pathname.substring(1));
+	frbs_saved = frbs_old.child($('.data').html());
 	frbs_saved.once('value', function (childSnapshot, prevChildName) {
 		$(".compliment").html(childSnapshot.val().text);
-	});*/
+	});
+	$("#images").css("display","none");
 }
 function loadData() {
 	frbs_data.on('value', function(snap) {
@@ -76,10 +80,11 @@ $("#sad").click(function() {
 	$("#images").css("display","none");
 
 });
-if(window.location.pathname != "/") {
-	console.log(window.location.pathname);
+
+console.log("d"+ $('.data').html());
+if($('.data').html() != "") {
+	linked=true;
 	loadOldCompliment();
-	loadNewCompliment();
 }
 else {
 	loadNewCompliment();

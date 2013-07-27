@@ -1,18 +1,18 @@
  var express = require('express')
   , http = require('http'),
-  ejs = require('ejs');
+  jade = require('jade');
 
 var app = express();
 var server = http.createServer(app);
 
-server.listen(process.env.PORT);
+server.listen(process.env.PORT || 3000);
 // routing
 
 app.get("/", function(req, res) {
-  res.redirect("index.ejs");
+  res.render("index");
 });
 app.get('/:id', function(req, res) {
-    res.render('index.ejs', {id:req.params.id});
+    res.render('index', {id:req.params.id});
 });
 app.configure(function(){
   app.use(express.methodOverride());
@@ -22,7 +22,7 @@ app.configure(function(){
     dumpExceptions: true, 
     showStack: true
   }));
-  app.set('view engine', 'ejs');
+  app.set('view engine', 'jade');
   app.set('view options', {
     layout: false
   });

@@ -1,0 +1,38 @@
+!!! 5
+html
+  head
+    title Warm Fuzzies
+    link(rel='stylesheet', href='stylesheets/style.css')
+    link(rel='stylesheet', href='stylesheets/component.css')
+    script(src='js/jquery.min.js')
+    script(src='js/firebase.js')
+    .data(style='display:none') #{id}
+  body
+    .title warm fuzzies
+    .container
+      #testing 
+        .compliment(style='display: block;') 
+      p
+        a(href='javascript:void(0);', style='position: fixed; right: 1%; top: 25%;')
+          img#f(src='imgs/finalf.png', height='60px', width='60px', style='padding-right: 0px;')
+        a(href='javascript:void(0);', style='position: fixed; right: 1%; top: 40%;')
+          img#t(src='imgs/finalbird.png', height='60px', width='60px', style='padding-right: 0px;')
+        a(style='position: fixed; right: 1%; top: 55%;')
+          img#l(src='imgs/link1.png', height='60px', width='60px')
+        #images(style='font-size: 30px; float: center; text-align: center; line-height: 100px;')
+          a(href='javascript:void(0);')
+            img#happy(src='imgs/happy.png', height='8%', width='8%', style='')
+          | or
+          a(href='javascript:void(0);')
+            img#sad(src='imgs/sad.png', height='8%', width='8%')
+    #data(style='position: fixed; bottom: 2%; left: 1%; font-size: 30px;')
+      | compliment counter:
+      #num(style='display: inline;')
+    #addyourown
+      form(method='post')
+        div
+          input#complimentText(type='text', name='compliment_text', placeholder='Submit a Compliment!')
+        #submit
+          input.btn.btn-1.btn-1a(type='submit', value='Submit')
+      button#add.btn.btn-1.btn-1a Submit your own compliment!
+  script(src='js/client.js')

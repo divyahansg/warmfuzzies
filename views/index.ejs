@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Warm Fuzzies  </title>
+	<link rel="stylesheet" href="stylesheets/style.css">
+	<link rel="stylesheet" href="stylesheets/component.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/firebase.js"></script>
+</head>
+<body>
+	<div class="title">warm fuzzies</div>
+	<div class="container">
+			<div id="testing">
+				<div class="compliment" style="display:block"></div>
+			</div>
+		<p>
+			<a href="javascript:void(0);" style="position:fixed; right:1%; top:25%;">
+				<img src="imgs/finalf.png" height="60px" width="60px" id="f" style=" padding-right: 0px">
+			</a>
+			<a href="javascript:void(0);" style="position:fixed; right:1%; top:40%">
+				<img src="imgs/finalbird.png" height="60px" width="60px" id="t" style=" padding-right: 0px">
+			</a>
+			<a style="position:fixed; right:1%; top:55%">
+				<img src="imgs/link1.png" height="60px" width="60px" id="l">
+			</a>
+			<div id="images" style="font-size:30px;float:center; text-align:center; line-height:100px">
+			<a href="javascript:void(0);"><img id="happy" src="imgs/happy.png" height="8%" width="8%" style=""></a>
+			or
+			<a href="javascript:void(0);">
+				<img id="sad" src="imgs/sad.png" height="8%" width="8%">
+			</a>
+			</div>
+		</p>
+	</div>
+	<div id="data" style="position:fixed; bottom:2%; left:1%; font-size: 30px;">
+		compliment counter: <div id="num" style="display:inline"></div>
+	</div>
+	<div id="addyourown">
+		<form method="post">
+			<div>
+				<input type="text" name="compliment_text" id="complimentText" placeholder="Submit a Compliment!">
+			</div>
+			<div id="submit">
+				<input type="submit" value="Submit" class="btn btn-1 btn-1a">
+			</div>
+		</form>
+		<button id="add" class="btn btn-1 btn-1a">Submit your own compliment!</button>
+	</div>
+</body>
+	<script src="js/client.js"></script>
+</html>
