@@ -33,7 +33,7 @@ $('#f').click(function() {
 $('#l').click(function(e) {
 	if(!linked) {
 	linked=true;
-	var rndm = Math.random().toString(36).substring(11);
+	var rndm = Math.random().toString(36).substring(9);
 	var frbs_rndm = frbs.child('saved');
 	frbs_rndm.child(rndm).set({text:$(".compliment").html()});
 	$(".compliment").html("http://warmfuzzi.es/"+rndm);
