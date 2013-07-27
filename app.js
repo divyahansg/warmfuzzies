@@ -1,6 +1,6 @@
  var express = require('express')
   , http = require('http'),
-  , ejs = require('ejs');
+  ejs = require('ejs');
 
 var app = express();
 var server = http.createServer(app);
