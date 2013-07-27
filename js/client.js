@@ -4,10 +4,12 @@ var frbs_new = frbs.child('new');
 var frbs_old = frbs.child('saved');
 var frbs_data = frbs.child('data').child('count');
 var linked =false;
+var submitted = false;
 $('form').submit(function (e) {
 	if($("input#complimentText").val().length == 0) return false;
 	var frbs_new = frbs.child('new');
 	frbs_new.push({text: $("input#complimentText").val()});
+	submitted = true;
 	//$('form').css({"display":"none"});
 	$("input#complimentText").val("");
 	$('form').css({"display":"none"});
@@ -81,7 +83,6 @@ $("#sad").click(function() {
 
 });
 
-console.log("d"+ $('.data').html());
 if($('.data').html() != "") {
 	linked=true;
 	loadOldCompliment();
@@ -90,3 +91,7 @@ else {
 	loadNewCompliment();
 }
 loadData();
+window.onbeforeunload = function(){
+  if(!submitted)
+  	return 'Submit a compliment before you leave!';
+};
